@@ -1,0 +1,35 @@
+/*
+*Type selector: we use the name of an element to select
+* all of the same type 
+*/
+p{
+    background-color: rgb(81, 81, 221);
+    border: 6px;
+    border-style: solid; 
+
+    /* by default, width and height properties define the size of the content box-*/
+    width: fit-content;
+    height: fit-content;
+    /* controls the space between the content and the border */
+    /* se usa para controlar el espacio entre el contenido y el borde */
+    padding: 90px;
+    padding-top: 200px;
+    /*Es Para controlar el espacio entre este elemento con otros*/
+    margin: 20px;
+
+    
+}
+
+h2{
+    background-color: aqua;
+    color: black;
+    text-align: center;;
+    border-style: solid;
+    border: 6px;
+    border-radius: 50%
+    
+    
+
+   
+   
+}
