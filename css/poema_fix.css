@@ -1,0 +1,121 @@
+/* Tipografía base y color de fondo para ver el cambio de inmediato */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 32px 18px;
+  background: var(--bg);
+  color: #374151;
+}
+
+/* Contenedor del poema (si quieres envolver el contenido) */
+div {
+  margin: 16px;
+  background: #ffffff;
+  border: 1px solid #7092d6;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+  position: relative;
+  width: fit-content;
+}
+/*
+What the relative positionig does is that
+the element applied with relative positioning
+will remain its position using "top, left, bottom, right"
+it moves relative to this position
+*/
+
+div:nth-child(odd) {
+  right: 3vw;
+}
+
+/* Títulos visibles */
+h1 {
+  max-width: 800px;
+  margin: 0 auto 10px;
+  font-size: 28px;
+  text-align: center;
+
+
+}
+
+h2 {
+  background-color: bisque;
+  border: 1px solid #7092d6;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #374151;
+  position: sticky;
+  /*
+  The following four parameters are used to control the position of this element whith respect to the viewport
+  */
+  /* the position of the top border of this element relative to the viewport */
+  top: 2px;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  float: right 100%;
+  text-align: center;
+
+}
+
+
+
+
+
+
+/* Párrafos del poema */
+p {
+  margin: 10px 0;
+}
+
+
+/* Estilo para las líneas en cursiva */
+em {
+  font-style: italic;
+}
+
+/* Estilo para las líneas en negrita */
+strong {
+  font-weight: bold;
+}
+
+.poem-img {
+  width: 5w;
+  border-radius: 1w;
+
+
+  /* use the following atributtes to determine the asolute*/
+  top: 0;
+  right: 0;
+
+
+
+
+}
+.poem-img-bottom {
+  width: 50px;
+  height: 50px;
+}
+
+nav {
+  position: fixed;
+  background-color: antiquewhite;
+  top: 10px;
+  right: 0vw;
+  z-index: 5;
+  margin: 4vw;
+  
+}
+
+a{
+  padding-left: 5vw;
+}
+
+main {
+  margin-top: 8vw;
+}

@@ -1,61 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Software de IA</title>
-  <link rel="stylesheet" href="../css/myprofile.css">
+  <meta charset="UTF-8" />
+  <!-- Hace que la página sea adaptable a pantallas de móvil -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Development - Jorge</title>
+
+  <!-- Enlazo mi archivo CSS con los estilos futuristas -->
+  <link rel="stylesheet" href="../css/myprofile.css" />
 </head>
 
 <body>
-  <!-- HEADER -->
-  <header>
-    <img src="../img/descarga.jpg" alt="Foto de perfil" class="profile-image">
-    <h1>IA Development</h1>
-    <h2>Created by Jorge</h2>
+  <!-- ========================= -->
+  <!--   ENCABEZADO PRINCIPAL    -->
+  <!-- ========================= -->
+  <header class="topbar">
+    <div class="container topbar-content">
+      <!-- Marca personal o título -->
+      <div class="brand">
+        <!-- Punto de luz decorativo -->
+        <span class="dot"></span>
+        <h1>IA Development</h1>
+        <p>Created by Jorge</p>
+      </div>
+
+      <!-- Barra de navegación con enlaces internos -->
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
+  <!-- ========================= -->
+  <!--     CONTENIDO PRINCIPAL   -->
+  <!-- ========================= -->
+  <main class="container page">
+    <!-- ======= TARJETA DE PERFIL ======= -->
+    <article class="hero-card">
+      <!-- Imagen de perfil -->
+      <div class="avatar-wrap" aria-label="Foto de Jorge"></div>
 
-    <!-- About Me -->
-    <section id="about">
-      <h1>About Me</h1>
-      <div>
-        <p class="about-me">
-          I am a programmer and AI developer. I'm passionate about creating intelligent applications.
+      <!-- Información principal -->
+      <div class="hero-body">
+        <span class="badge">AI &amp; Programmer</span>
+        <h2>Jorge</h2>
+        <p>
+          I'm passionate about creating intelligent applications.
+          Experience in ML, NLP and computer vision.
         </p>
-        <p class="about-me">
-          I have experience in machine learning, natural language processing and computer vision.
-        </p>
-        <img src="../img/programador.jpg" alt="Programador trabajando en IA">
+      </div>
+
+      <!-- Estado actual (online/offline) -->
+      <div class="hero-side">
+        <p class="label">Current status</p>
+        <p class="status online">Available</p>
+      </div>
+    </article>
+
+    <!-- ========================= -->
+    <!--        GRID PRINCIPAL     -->
+    <!-- ========================= -->
+    <section class="main-grid">
+      <!-- === COLUMNA IZQUIERDA === -->
+      <div class="col">
+
+        <!-- SECCIÓN: About Me -->
+        <article id="about" class="card glass">
+          <h2>About Me</h2>
+          <p>
+            I am a programmer and AI developer. I like building smart systems and learning new technologies.
+            I enjoy clean code and good UI. I also like to experiment with front-end to make better interfaces.
+          </p>
+        </article>
+
+        <!-- SECCIÓN: Projects -->
+        <article id="projects" class="card glass">
+          <h2>My Projects</h2>
+          <!-- Lista de proyectos -->
+          <ul class="list">
+            <li>Game Development</li>
+            <li>Space Expeditions</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Artificial Intelligence</li>
+            <li>Java Fundamentals</li>
+            <li>SQL / NoSQL</li>
+            <li>More soon...</li>
+          </ul>
+        </article>
+
+        <!-- SECCIÓN: Interests -->
+        <article class="card glass">
+          <h2>Interests</h2>
+          <div class="tag-row">
+            <span>Space tech</span>
+            <span>UI/UX</span>
+            <span>Cyberpunk art</span>
+            <span>Indie games</span>
+            <span>Music</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- === COLUMNA DERECHA === -->
+      <div class="col">
+
+        <!-- SECCIÓN: Skills -->
+        <article id="skills" class="card glass">
+          <h2>Tech &amp; Skills</h2>
+          <!-- Cada etiqueta representa una habilidad -->
+          <div class="tag-row">
+            <span>Python</span>
+            <span>Java</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Machine Learning</span>
+            <span>Neural Networks</span>
+            <span>Git &amp; GitHub</span>
+          </div>
+        </article>
+
+        <!-- SECCIÓN: Experience -->
+        <article id="experience" class="card glass">
+          <h2>Experiences</h2>
+
+          <!-- Primer trabajo -->
+          <section class="job">
+            <h3>Space Hunters — Biologist</h3>
+            <p class="time">From 2040 to 2045</p>
+            <p>Explored uncharted planets and collected biological samples for research.</p>
+          </section>
+
+          <!-- Segundo trabajo -->
+          <section class="job">
+            <h3>IA Researcher — Future Labs</h3>
+            <p class="time">2046 - Present</p>
+            <p>Developing neural architectures for image recognition and generative models.</p>
+          </section>
+        </article>
+
+        <!-- SECCIÓN: Education + Certificates -->
+        <article id="education" class="card glass">
+          <h2>Education</h2>
+          <!-- Línea de tiempo con estudios -->
+          <ul class="timeline">
+            <li>
+              <h4>Bachelor in Computer Science</h4>
+              <p class="time">2036 - 2040</p>
+            </li>
+            <li>
+              <h4>Science High School</h4>
+              <p class="time">2032 - 2036</p>
+            </li>
+          </ul>
+
+          <h3 class="sub">Certificates</h3>
+          <ul class="list small">
+            <li>Machine Learning — Online</li>
+            <li>Responsive Web Design</li>
+            <li>Git &amp; GitHub Fundamentals</li>
+          </ul>
+        </article>
+
+        <!-- SECCIÓN: Contact -->
+        <article id="contact" class="card glass">
+          <h2>Contact</h2>
+          <p>If you want to collaborate or ask me something:</p>
+          <ul class="list small">
+            <li><strong>Email:</strong> jorge@example.com</li>
+            <li><strong>Instagram:</strong> @jorge_ai</li>
+          </ul>
+        </article>
       </div>
     </section>
-
-   <section id="projects">
-  <h1>My Projects</h1>
-
-  <div class="projects-table">
-    <!-- Fila 1 -->
-    <div class="cell"></div>
-    <div class="cell">Game Development</div>
-    <div class="cell">Space Expeditions</div>
-    <div class="cell">HTML, CSS, JavaScript</div>
-
-    <!-- Fila 2 -->
-    <div class="cell">Artificial Intelligence</div>
-    <div class="cell"></div>
-    <div class="cell">Java Fundamentals</div>
-    <div class="cell">SQL<br>No SQL</div>
-  </div>
-</section>
-
-
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 IA Development · Created by Jorge</p>
+  <!-- ========================= -->
+  <!--         PIE DE PÁGINA     -->
+  <!-- ========================= -->
+  <footer class="site-footer">
+    <p>Designed by Jorge — 2025</p>
   </footer>
 </body>
 </html>

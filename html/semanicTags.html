@@ -1,35 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA Development - Jorge</title>
+  <!-- enlazo mi css -->
+  <link rel="stylesheet" href="../css/myprofile.css" />
 </head>
 <body>
-    <!--In this tag, we usually put company logo and name-->
-    <header></header>
-    <!--Here we disign the navigaation bar-->
-    <nav></nav>
-    <!------>
-    
+  <!-- CAMBIO 1: encabezado con navegación -->
+  <header class="topbar">
+    <div class="logo">
+      <h1>IA Development</h1>
+      <p>Created by Jorge</p>
+    </div>
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </header>
 
+  <!-- contenido principal -->
+  <main class="page">
+    <!-- CAMBIO 2: tarjeta de perfil -->
+    <article id="profile" class="profile-card">
+      <div class="avatar" aria-label="Foto de perfil"></div>
+      <div class="profile-info">
+        <span class="badge">AI &amp; Programmer</span>
+        <h2>Jorge</h2>
+        <p class="desc">
+          I'm passionate about creating intelligent applications. I have experience in ML, NLP and computer vision.
+        </p>
+        <div class="mini-data">
+          <p><strong>Location:</strong> Remote</p>
+          <p><strong>Available:</strong> Yes</p>
+        </div>
+      </div>
+    </article>
 
-        <div></div>
-    <main>
-        <!--It is used to define a complete part of the page-->
-        <article>
-            <!---tHIS TAG IS USED to ---->
+    <!-- CAMBIO 3: secciones organizadas en 2 columnas -->
+    <div class="grid">
+      <!-- columna izquierda -->
+      <section id="about" class="card">
+        <header><h2>About Me</h2></header>
+        <p>
+          I am a programmer and AI developer. I like building smart systems and learning new technologies.
+          I enjoy clean code and good UI. I like to experiment with front-end to make better interfaces.
+        </p>
+      </section>
 
-            <section></section>
-            <section></section>
-        <article>
+      <section id="projects" class="card">
+        <header><h2>My Projects</h2></header>
+        <ul class="list-tags">
+          <li>Game Development</li>
+          <li>Space Expeditions</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Artificial Intelligence</li>
+          <li>Java Fundamentals</li>
+          <li>SQL / NoSQL</li>
+          <li>More soon...</li>
+        </ul>
+      </section>
+
+      <!-- columna derecha -->
+      <section id="skills" class="card">
+        <header><h2>Tech &amp; Skills</h2></header>
+        <div class="skills-tags">
+          <span>Python</span>
+          <span>Java</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Machine Learning</span>
+          <span>Neural Networks</span>
+          <span>Git &amp; GitHub</span>
+        </div>
+      </section>
+
+      <section id="experience" class="card">
+        <header><h2>Experiences</h2></header>
+        <article class="job">
+          <h3>Space Hunters — Biologist</h3>
+          <p class="time">From 2040 to 2045</p>
+          <p>Explored uncharted planets and collected biological samples for research.</p>
         </article>
-           </section><section>
-           </section><section>
-        <article>
-    </main>
-    <!--Here we add additional information related to the main content-->
-    <footer></footer>
-    </body>
+        <article class="job">
+          <h3>IA Researcher — Future Labs</h3>
+          <p class="time">2046 - Present</p>
+          <p>Developing neural architectures for image recognition and generative models.</p>
+        </article>
+      </section>
+    </div>
+  </main>
 
+  <!-- CAMBIO 5: footer con info extra -->
+  <footer class="footer">
+    <p>Designed by Jorge — 2025</p>
+  </footer>
+</body>
 </html>

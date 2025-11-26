@@ -1,164 +1,100 @@
-/* === Reset general === */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
+/* === PERFIL FUTURISTA - JORGE ===
+   Fondo oscuro, tarjetas glass y estilo limpio */
+
+/* ----- VARIABLES (colores y efectos reutilizables) ----- */
+:root {
+  --bg: radial-gradient(circle at top, #0f172a, #030712 60%, #020617); /* fondo oscuro con luz arriba */
+  --text: #e2e8f0;   /* color principal del texto */
+  --muted: #94a3b8;  /* texto secundario gris */
+  --accent: #38bdf8; /* color azul neón de acento */
+  --radius: 1rem;    /* bordes redondeados globales */
+  --shadow: 0 8px 25px rgba(0,0,0,.4); /* sombra para dar profundidad */
 }
 
-/* === Estructura general === */
-html {
-  border: 2px solid black;
+/* ----- RESET GENERAL ----- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",sans-serif;}
+body{background:var(--bg);color:var(--text);min-height:100vh;}
+.container{width:min(1100px,100%);margin:auto;padding:0 1rem;}
+
+/* ----- CABECERA SUPERIOR (header fijo) ----- */
+.topbar{
+  backdrop-filter:blur(12px);               /* desenfoque tipo vidrio */
+  background:rgba(3,7,15,.55);              /* fondo oscuro translúcido */
+  border-bottom:1px solid rgba(255,255,255,.05);
+  position:sticky;top:0;z-index:10;         /* permanece visible arriba */
+}
+.topbar-content{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;}
+.brand{display:flex;align-items:center;gap:.6rem;} /* logo + texto */
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent);} /* punto brillante */
+.brand h1{font-size:1.4rem;} .brand p{font-size:.65rem;color:var(--muted);} /* texto del header */
+
+/* menú de navegación superior */
+.nav{display:flex;flex-wrap:wrap;gap:.6rem;}
+.nav a{
+  color:var(--text);text-decoration:none;font-size:.7rem;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  padding:.35rem .7rem;border-radius:999px;transition:.2s;
+}
+.nav a:hover{background:rgba(56,189,248,.2);border-color:rgba(56,189,248,.4);} /* efecto hover */
+
+/* ----- TARJETA PRINCIPAL (perfil) ----- */
+.page{margin-top:1.5rem;}
+.hero-card{
+  display:flex;align-items:center;gap:1rem;padding:1.2rem;margin-bottom:1.2rem;
+  background:rgba(15,23,42,.45);border:1px solid rgba(255,255,255,.08);
+  border-radius:1.2rem;box-shadow:var(--shadow);
+}
+.avatar-wrap{
+  width:90px;height:90px;border-radius:1rem;
+  background:url("https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=400")center/cover;
+  border:2px solid rgba(255,255,255,.15); /* foto con borde */
+}
+.hero-body h2{font-size:1.2rem;} /* nombre grande */
+.hero-body p{font-size:.75rem;color:var(--muted);} /* descripción */
+.badge{
+  display:inline-block;background:rgba(56,189,248,.15);
+  border:1px solid rgba(56,189,248,.4);border-radius:999px;
+  padding:.25rem .6rem;font-size:.6rem;margin-bottom:.3rem; /* etiqueta azul */
+}
+.status{margin-left:auto;font-size:.7rem;color:#22c55e;font-weight:600;} /* estado activo */
+
+/* ----- GRID PRINCIPAL (dos columnas) ----- */
+.main-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;}
+.col{display:flex;flex-direction:column;gap:1.2rem;}
+
+/* ----- TARJETAS GLASS (about, skills, etc.) ----- */
+.card{
+  background:rgba(3,7,15,.32);border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--radius);padding:1rem;backdrop-filter:blur(10px);
+  box-shadow:0 6px 20px rgba(0,0,0,.25);transition:.2s;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(56,189,248,.3);} /* efecto flotante */
+.card h2{font-size:.9rem;margin-bottom:.5rem;} /* título sección */
+.card p{font-size:.7rem;color:rgba(226,232,240,.85);line-height:1.5;} /* texto */
+
+/* ----- LISTAS Y ETIQUETAS ----- */
+.list{list-style:none;display:grid;gap:.35rem;font-size:.68rem;} /* lista sin viñetas */
+.list.small li{font-size:.65rem;} /* listas pequeñas (certificados) */
+.tag-row{display:flex;flex-wrap:wrap;gap:.4rem;} /* fila de etiquetas */
+.tag-row span{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;padding:.3rem .6rem;font-size:.62rem; /* chip individual */
 }
 
-body {
-  border: 5px dashed black;
-  margin: 0;
-  background-color: #0a0a0a;
-  color: white;
-}
+/* ----- EXPERIENCIA Y EDUCACIÓN ----- */
+.job{margin-bottom:.6rem;} .job h3{font-size:.72rem;} /* cargo laboral */
+.time{font-size:.58rem;color:var(--muted);} /* fechas */
+.timeline{list-style:none;display:grid;gap:.5rem;margin-bottom:.4rem;} /* lista vertical */
+.timeline h4{font-size:.68rem;} .sub{margin-top:.3rem;font-size:.7rem;} /* subtítulo */
 
-/* === Header === */
-header {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: medium;
-  border-bottom: 3px solid #333;
-}
+/* ----- PIE DE PÁGINA ----- */
+.site-footer{
+  text-align:center;padding:1.8rem 1rem 2rem;
+  font-size:.65rem;color:rgba(226,232,240,.4);} /* texto suave centrado */
 
-header h1 {
-  font-size: 2em;
-  margin: 10px 0 5px 0;
-}
-
-header h2 {
-  font-weight: normal;
-  font-size: 1.2em;
-  margin: 0;
-}
-
-/* === Imagen de perfil === */
-.profile-image {
-  width: 200px;
-  height: 200px;
-  border: 3px solid white;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 10px;
-}
-
-/* === Secciones === */
-section {
-  background-color: rgb(81, 81, 221);
-  color: white;
-  text-align: center;
-  border: 3px solid black;
-  margin: 20px;
-  padding: 20px;
-  font-size: large;
-  border-radius: 25px;
-  clear: both;
-}
-
-/* Título dentro de cada sección */
-section > h1 {
-  background-color: aqua;
-  color: black;
-  padding: 8px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-/* === Texto dentro de las secciones === */
-p {
-  color: white;
-  line-height: 1.6;
-}
-
-/* === Enlaces (links) === */
-a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  color: aqua;
-  text-decoration: underline;
-}
-
-/* === Footer === */
-footer {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-size: medium;
-  border-top: 3px solid #333;
-}
-
-/* === GRID DE PROYECTOS estilo tabla === */
-.projects-table {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  grid-auto-rows: 90px;                  /* altura fija por fila */
-  background: #e7eef3;                   /* fondo general detrás de celdas */
-  border: 2px solid #2b2b2b;             /* borde exterior */
-  border-radius: 6px;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-/* Celdas individuales */
-.projects-table .cell {
-  background: #33d0df;                   /* color de caja */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 700;
-  color: #14323a;                        /* color de texto */
-  box-shadow:
-    inset -2px 0 0 0 #2b2b2b,            /* línea derecha */
-    inset 0 -2px 0 0 #2b2b2b;            /* línea inferior */
-  padding: 10px;
-}
-
-/* Quitar línea derecha última columna */
-.projects-table .cell:nth-child(4),
-.projects-table .cell:nth-child(8) {
-  box-shadow:
-    inset 0 -2px 0 0 #2b2b2b;
-}
-
-/* Quitar línea inferior última fila */
-.projects-table .cell:nth-child(n+5) {
-  box-shadow:
-    inset -2px 0 0 0 #2b2b2b;
-}
-
-/* Quitar ambas en esquina inferior derecha */
-.projects-table .cell:nth-child(8) {
-  box-shadow: none;
-}
-
-/* Efecto hover (opcional) */
-.projects-table .cell:hover {
-  background: #27b8c5;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* === Responsive === */
-@media (max-width: 800px) {
-  .projects-table {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-  }
-}
-
-@media (max-width: 500px) {
-  .projects-table {
-    grid-template-columns: 1fr; /* 1 columna */
-  }
+/* ----- RESPONSIVE (pantallas pequeñas) ----- */
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr;} /* pasa a una columna */
+  .hero-card{flex-wrap:wrap;} /* perfil se acomoda en filas */
+  .nav{display:none;} /* oculto el menú largo */
 }
