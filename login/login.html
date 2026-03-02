@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login · MyStore</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <main class="auth">
+        <section class="auth-info">
+            <h1>MyStore</h1>
+            <p>Gestiona tu tienda, pedidos y clientes desde un solo lugar.</p>
+        </section>
+
+        <section class="auth-form">
+            <h2>Iniciar sesión</h2>
+
+            <form id="loginForm" novalidate>
+                <div class="field">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com">
+                    <small class="error"></small>
+                </div>
+
+                <div class="field">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                    <small class="error"></small>
+                </div>
+
+                <div class="extras">
+                    <label>
+                        <input type="checkbox"> Recordarme
+                    </label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+
+                <button type="submit">Acceder</button>
+            </form>
+
+            <p class="switch">
+                ¿No tienes cuenta? <a href="#">Crear cuenta</a>
+            </p>
+        </section>
+    </main>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html> <!-- Indica HTML5 -->
+<html lang="es"> <!-- Idioma español -->
+<head>
+  <meta charset="UTF-8"> <!-- Permite tildes y ñ -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive -->
+  <title>CodeNova</title> <!-- Título de la pestaña -->
+  <link rel="stylesheet" href="styles.css"> <!-- Conecta el CSS -->
+</head>
+
+<body>
+  <div class="grid-layout"> <!-- Contenedor principal con Grid -->
+
+    <header class="header"> <!-- Parte superior -->
+      <h1>&lt;CodeNova /&gt;</h1> <!-- Título principal -->
+      <nav class="nav"> <!-- Menú -->
+        <a href="#inicio">Inicio</a>
+        <a href="#perfiles">Perfiles</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <aside class="aside"> <!-- Barra lateral -->
+      <h2>Perfiles</h2> <!-- Título del aside -->
+      <ul>
+        <li>Frontend</li> <!-- Tipo de programador -->
+        <li>Backend</li>
+        <li>Full Stack</li>
+        <li>Mobile</li>
+      </ul>
+    </aside>
+
+    <main class="main"> <!-- Contenido principal -->
+
+      <section id="inicio" class="hero"> <!-- Sección destacada -->
+        <h2>Tipos de Programadores</h2> <!-- Título -->
+        <p>Conoce los principales perfiles dentro del desarrollo de software.</p> <!-- Texto -->
+      </section>
+
+      <section id="perfiles" class="section"> <!-- Sección de tarjetas -->
+        <h2>Perfiles Profesionales</h2>
+
+        <div class="cards"> <!-- Contenedor de cards -->
+
+          <article class="card"> <!-- Tarjeta -->
+            <h3>Frontend</h3>
+            <p>Se encarga de la parte visual de las páginas web.</p>
+          </article>
+
+          <article class="card">
+            <h3>Backend</h3>
+            <p>Trabaja con servidores, bases de datos y lógica.</p>
+          </article>
+
+          <article class="card">
+            <h3>Full Stack</h3>
+            <p>Combina frontend y backend.</p>
+          </article>
+
+          <article class="card">
+            <h3>Mobile</h3>
+            <p>Desarrolla aplicaciones para móviles.</p>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="contacto" class="section"> <!-- Sección contacto -->
+        <h2>Contacto</h2>
+        <p>correo@codenova.dev</p>
+      </section>
+
+    </main>
+
+    <footer class="footer"> <!-- Pie de página -->
+      <p>© 2026 · CodeNova</p>
+    </footer>
+
+  </div>
+</body>
+</html>
