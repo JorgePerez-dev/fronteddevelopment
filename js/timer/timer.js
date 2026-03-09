@@ -1,35 +1,40 @@
-let seconds = 0;
-let interval = null;
+const start = document.getElementById('start');
+console.log(start);
+console.debug(start);
+const stop = document.getElementById('stop');
+console.log(stop);
+const reset = document.getElementById('reset');
+console.log(reset);
+//Retrive an element that does not exist from the web page DOM
+const anyElement = document.getElementById('any thing');
+console.log(anyElement);
+const timer = document.getElementById('timer');
+console.log(timer);
+//star.addEventListener('click', function () {
+stop.addEventListener('click', function () {
+    console.log("heheheehe");
+});
 
-const timeDisplay = document.getElementById("time");
-const startBtn = document.getElementById("start");
-const stopBtn = document.getElementById("stop");
-const resetBtn = document.getElementById("reset");
+function resetHandler() {
+    console.debug("wowowowowo");
+}
+console.log(timer);
+reset.addEventListener('click', resetHandler);
 
-function updateTime() {
-  seconds++;
-  let mins = Math.floor(seconds / 60);
-  let secs = seconds % 60;
+console.log(timer);
 
-  timeDisplay.textContent =
-    String(mins).padStart(2, "0") + ":" +
-    String(secs).padStart(2, "0");
+
+
+function aumentar() {
+  let size = parseInt(start.style.fontSize) || 16;
+  start.style.fontSize = (size + 5) + "px";
 }
 
-startBtn.addEventListener("click", () => {
-  if (interval === null) {
-    interval = setInterval(updateTime, 1000);
-  }
+//Associate an element with a type of event and an action
+//that we want to respond to the event
+start.addEventListener("click", () => {
+    console.debug("jajajaj");
+  
 });
 
-stopBtn.addEventListener("click", () => {
-  clearInterval(interval);
-  interval = null;
-});
-
-resetBtn.addEventListener("click", () => {
-  clearInterval(interval);
-  interval = null;
-  seconds = 0;
-  timeDisplay.textContent = "00:00";
-});
+console.log(timer);
