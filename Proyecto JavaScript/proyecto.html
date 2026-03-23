@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- Indica que el documento es una página HTML -->
+
+<html> <!-- Elemento principal que contiene toda la página -->
+
+<body> <!-- Contiene todo el contenido visible de la página -->
+
+<h1 id="titulo">Hola</h1> 
+<!-- Título de la página. Tiene el id "titulo" para que JavaScript pueda encontrarlo usando el DOM -->
+
+<button onclick="cambiar()">Cambiar texto</button> 
+<!-- Botón. Cuando el usuario hace clic se ejecuta la función cambiar() -->
+
+<script> 
+// Aquí empieza el código JavaScript
+
+function cambiar() { 
+// Función que se ejecuta cuando se pulsa el botón
+
+    document.getElementById("titulo").textContent = "Hola Jorge"; 
+    // Busca el elemento con id "titulo" en el DOM y cambia su texto
+
+}
+
+</script> <!-- Aquí termina el código JavaScript -->
+
+</body> <!-- Fin del contenido visible de la página -->
+
+</html> <!-- Fin del documento HTML -->

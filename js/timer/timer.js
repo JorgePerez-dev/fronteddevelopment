@@ -1,40 +1,44 @@
 const start = document.getElementById('start');
-console.log(start);
-console.debug(start);
 const stop = document.getElementById('stop');
-console.log(stop);
 const reset = document.getElementById('reset');
-console.log(reset);
-//Retrive an element that does not exist from the web page DOM
-const anyElement = document.getElementById('any thing');
-console.log(anyElement);
 const timer = document.getElementById('timer');
-console.log(timer);
-//star.addEventListener('click', function () {
-stop.addEventListener('click', function () {
-    console.log("heheheehe");
-});
 
-function resetHandler() {
-    console.debug("wowowowowo");
-}
-console.log(timer);
-reset.addEventListener('click', resetHandler);
+let seconds = 0;
+let interval = null;
+let scale = 1;
 
-console.log(timer);
-
-
-
-function aumentar() {
-  let size = parseInt(start.style.fontSize) || 16;
-  start.style.fontSize = (size + 5) + "px";
-}
-
-//Associate an element with a type of event and an action
-//that we want to respond to the event
 start.addEventListener("click", () => {
-    console.debug("jajajaj");
-  
+
+    interval = setInterval(() => {
+
+        seconds++;
+
+        timer.textContent = "00:" + (seconds < 10 ? "0" + seconds : seconds);
+
+        // crecer hasta segundo 10
+        if (seconds <= 10) {
+            scale += 0.1;
+            start.style.transform = "scale(" + scale + ")";
+        }
+
+        // bajar progresivamente después del 10
+        if (seconds > 10 && scale > 1) {
+            scale -= 0.1;
+            start.style.transform = "scale(" + scale + ")";
+        }
+
+    }, 1000);
+
 });
 
-console.log(timer);
+stop.addEventListener("click", () => {
+    clearInterval(interval);
+});
+
+reset.addEventListener("click", () => {
+    clearInterval(interval);
+    seconds = 0;
+    scale = 1;
+    timer.textContent = "00:00";
+    start.style.transform = "scale(1)";
+});
