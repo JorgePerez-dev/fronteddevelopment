@@ -1,0 +1,155 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;                     /* elimina márgenes */
+  padding: 0;                    /* elimina padding */
+  box-sizing: border-box;        /* controla tamaños */
+}
+
+/* ===== ESTILO GENERAL ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif; /* fuente más suave */
+  background: linear-gradient(#0f172a, #020617); /* fondo oscuro */
+  color: #cbd5e1;              /* gris claro (menos blanco puro) */
+  min-height: 100vh;           /* ocupa toda la pantalla */
+  line-height: 1.6;            /* espacio entre líneas */
+}
+
+/* ===== GRID PRINCIPAL ===== */
+.grid-layout {
+  display: grid;               /* activa grid */
+  grid-template-columns: 240px 1fr; /* aside + contenido */
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+}
+
+/* ===== HEADER ===== */
+.header {
+  grid-area: header;           /* zona header */
+  background: #2563eb;         /* azul principal */
+  padding: 1.5rem 2.5rem;      /* más aire */
+}
+
+.header h1 {
+  font-size: 2.4rem;           /* título más claro */
+  font-weight: 600;            /* menos pesado */
+  margin-bottom: 0.6rem;       /* separación */
+}
+
+/* ===== NAVEGACIÓN ===== */
+.nav a {
+  color: #e5e7eb;              /* blanco suave */
+  margin-right: 1.5rem;        /* espacio entre enlaces */
+  text-decoration: none;       /* sin subrayado */
+  font-size: 1rem;             /* tamaño cómodo */
+  opacity: 0.9;                /* suaviza */
+}
+
+.nav a:hover {
+  opacity: 1;                  /* resalta al hover */
+  text-decoration: underline;  /* feedback visual */
+}
+
+/* ===== ASIDE ===== */
+.aside {
+  grid-area: aside;            /* zona lateral */
+  background: #020617;         /* fondo oscuro */
+  padding: 2.5rem 2rem;        /* más espacio */
+}
+
+.aside h2 {
+  font-size: 1.3rem;           /* subtítulo claro */
+  margin-bottom: 1.2rem;       /* aire debajo */
+  color: #93c5fd;              /* azul suave */
+}
+
+.aside li {
+  font-size: 0.95rem;          /* texto legible */
+  margin-bottom: 0.7rem;       /* espacio entre items */
+  opacity: 0.85;               /* menos contraste */
+}
+
+/* ===== MAIN ===== */
+.main {
+  grid-area: main;             /* zona principal */
+  padding: 3rem;               /* mucho aire */
+  display: flex;               /* flexbox */
+  flex-direction: column;      /* en columna */
+  gap: 3.5rem;                 /* separación entre secciones */
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: #020617;         /* fondo sección */
+  padding: 3rem;               /* más espacio */
+  border-radius: 16px;         /* bordes suaves */
+}
+
+.hero h2 {
+  font-size: 2rem;             /* título principal */
+  margin-bottom: 1rem;         /* separación */
+  color: #93c5fd;              /* azul claro */
+}
+
+.hero p {
+  font-size: 1rem;             /* texto normal */
+  opacity: 0.9;                /* suaviza */
+}
+
+/* ===== SECCIONES ===== */
+.section h2 {
+  font-size: 1.7rem;           /* título de sección */
+  margin-bottom: 2rem;         /* espacio abajo */
+  color: #93c5fd;              /* azul */
+}
+
+/* ===== TARJETAS ===== */
+.cards {
+  display: flex;               /* tarjetas en fila */
+  gap: 2rem;                   /* separación cómoda */
+  flex-wrap: wrap;             /* bajan si no caben */
+}
+
+.card {
+  background: #020617;         /* fondo tarjeta */
+  padding: 2rem;               /* espacio interno */
+  width: 240px;                /* tamaño uniforme */
+  border-radius: 16px;         /* bordes suaves */
+}
+
+.card h3 {
+  font-size: 1.2rem;           /* título claro */
+  margin-bottom: 0.6rem;       /* separación */
+  color: #e5e7eb;              /* blanco suave */
+}
+
+.card p {
+  font-size: 0.95rem;          /* texto cómodo */
+  opacity: 0.85;               /* menos dureza */
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  grid-area: footer;           /* zona footer */
+  text-align: center;          /* centrado */
+  padding: 1.5rem;             /* espacio */
+  font-size: 0.85rem;          /* pequeño */
+  color: #94a3b8;              /* gris suave */
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .grid-layout {
+    grid-template-columns: 1fr; /* una columna */
+    grid-template-areas:
+      "header"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  .cards {
+    flex-direction: column;    /* cards en columna */
+  }
+}

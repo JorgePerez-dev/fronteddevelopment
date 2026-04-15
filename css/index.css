@@ -1,0 +1,22 @@
+*{
+    font-family: monospace;
+    font-size: large;
+}
+
+.logo{
+    max-width: 200px;
+    min-width: none;
+    
+}
+nav>ul{
+    list-style: none;
+    /* display is a property used to organize a grouo of elements */
+    display: flex;
+    flex-direction: row;
+    padding: auto;
+    justify-content: flex-start;
+    border: 2px solid black;
+}
+nav>ul>li{
+    margin: 20px;
+}
