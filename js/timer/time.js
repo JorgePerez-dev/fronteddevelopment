@@ -12,7 +12,7 @@ function updateTime() {
     const hours = Date.getHours();
     const minutes = Date.getMinutes();
     const seconds = Date.getSeconds();
-    timeDisplay.innerText = Date.getSeconds();
+    timeDisplay.innerText = hours + ":" + minutes + ":" + seconds;
 
 }
 

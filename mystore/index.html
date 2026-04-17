@@ -4,31 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodeNova</title>
-  <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="../mystore/styles.css">
+<link rel="stylesheet" href="../theme/theme.css">
 </head>
 
+<body class="dark">
 
-  <div id="TimePanel" class="timer">00:00:00</div>
-
-<body>
   <div class="grid-layout">
 
-
-
-
-
-    
     <header class="header">
       <h1>&lt;CodeNova /&gt;</h1>
 
-      <!-- ⏰ RELOJ -->
-      <div id="TimePanel">00:00:00</div>
+      <div id="TimePanel" class="timer">00:00:00</div>
 
       <nav class="nav">
         <a href="#inicio">Inicio</a>
         <a href="#perfiles">Perfiles</a>
         <a href="#contacto">Contacto</a>
       </nav>
+
+      <div class="theme-controls">
+        <button class="theme-btn" data-theme="light">🌞</button>
+        <button class="theme-btn" data-theme="dark">🌙</button>
+        <button class="theme-btn" data-theme="neon">🧪</button>
+        <button class="theme-btn" data-theme="forest">🌲</button>
+      </div>
+
     </header>
 
     <aside class="aside">
@@ -42,7 +43,6 @@
     </aside>
 
     <main class="main">
-
       <section id="inicio" class="hero">
         <h2>Tipos de Programadores</h2>
         <p>Conoce los principales perfiles dentro del desarrollo de software.</p>
@@ -52,7 +52,6 @@
         <h2>Perfiles Profesionales</h2>
 
         <div class="cards">
-
           <article class="card">
             <h3>Frontend</h3>
             <p>Se encarga de la parte visual de las páginas web.</p>
@@ -72,7 +71,6 @@
             <h3>Mobile</h3>
             <p>Desarrolla aplicaciones para móviles.</p>
           </article>
-
         </div>
       </section>
 
@@ -80,7 +78,6 @@
         <h2>Contacto</h2>
         <p>correo@codenova.dev</p>
       </section>
-
     </main>
 
     <footer class="footer">
@@ -89,8 +86,7 @@
 
   </div>
 
-  <!-- 🔥 IMPORTANTE: conectar JS -->
-  <script src="timer.js"></script>
-
+  <!-- SOLO UNA VEZ -->
+<script src="../theme/theme.js"></script>
 </body>
 </html>
