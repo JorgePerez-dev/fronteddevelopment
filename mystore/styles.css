@@ -1,23 +1,40 @@
 /* ===== RESET ===== */
 * {
-  margin: 0;                     /* elimina márgenes */
-  padding: 0;                    /* elimina padding */
-  box-sizing: border-box;        /* controla tamaños */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ===== ESTILO GENERAL ===== */
-body {
-  font-family: "Segoe UI", Arial, sans-serif; /* fuente más suave */
-  background: linear-gradient(#0f172a, #020617); /* fondo oscuro */
-  color: #cbd5e1;              /* gris claro (menos blanco puro) */
-  min-height: 100vh;           /* ocupa toda la pantalla */
-  line-height: 1.6;            /* espacio entre líneas */
+/* ===== TRANSICIÓN SUAVE ===== */
+.theme-transition {
+  transition: all 0.4s ease;
+}
+
+/* ===== TEMAS ===== */
+body.dark {
+  background: linear-gradient(#0f172a, #020617);
+  color: #cbd5e1;
+}
+
+body.light {
+  background: #f4f4f4;
+  color: #111;
+}
+
+body.neon {
+  background: #020617;
+  color: #39ff14;
+}
+
+body.forest {
+  background: linear-gradient(#022c22, #064e3b);
+  color: #d1fae5;
 }
 
 /* ===== GRID PRINCIPAL ===== */
 .grid-layout {
-  display: grid;               /* activa grid */
-  grid-template-columns: 240px 1fr; /* aside + contenido */
+  display: grid;
+  grid-template-columns: 240px 1fr;
   grid-template-areas:
     "header header"
     "aside main"
@@ -26,122 +43,94 @@ body {
 
 /* ===== HEADER ===== */
 .header {
-  grid-area: header;           /* zona header */
-  background: #2563eb;         /* azul principal */
-  padding: 1.5rem 2.5rem;      /* más aire */
+  grid-area: header;
+  padding: 1.5rem 2.5rem;
 }
+
+/* COLOR DINÁMICO SEGÚN TEMA */
+body.dark .header { background: #2563eb; }
+body.light .header { background: #e5e7eb; }
+body.neon .header { background: #111; }
+body.forest .header { background: #065f46; }
 
 .header h1 {
-  font-size: 2.4rem;           /* título más claro */
-  font-weight: 600;            /* menos pesado */
-  margin-bottom: 0.6rem;       /* separación */
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
 }
 
-/* ===== NAVEGACIÓN ===== */
+/* ===== NAV ===== */
 .nav a {
-  color: #e5e7eb;              /* blanco suave */
-  margin-right: 1.5rem;        /* espacio entre enlaces */
-  text-decoration: none;       /* sin subrayado */
-  font-size: 1rem;             /* tamaño cómodo */
-  opacity: 0.9;                /* suaviza */
-}
-
-.nav a:hover {
-  opacity: 1;                  /* resalta al hover */
-  text-decoration: underline;  /* feedback visual */
+  margin-right: 1.5rem;
+  text-decoration: none;
 }
 
 /* ===== ASIDE ===== */
 .aside {
-  grid-area: aside;            /* zona lateral */
-  background: #020617;         /* fondo oscuro */
-  padding: 2.5rem 2rem;        /* más espacio */
-}
-
-.aside h2 {
-  font-size: 1.3rem;           /* subtítulo claro */
-  margin-bottom: 1.2rem;       /* aire debajo */
-  color: #93c5fd;              /* azul suave */
-}
-
-.aside li {
-  font-size: 0.95rem;          /* texto legible */
-  margin-bottom: 0.7rem;       /* espacio entre items */
-  opacity: 0.85;               /* menos contraste */
+  grid-area: aside;
+  padding: 2.5rem 2rem;
 }
 
 /* ===== MAIN ===== */
 .main {
-  grid-area: main;             /* zona principal */
-  padding: 3rem;               /* mucho aire */
-  display: flex;               /* flexbox */
-  flex-direction: column;      /* en columna */
-  gap: 3.5rem;                 /* separación entre secciones */
+  grid-area: main;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
 }
 
 /* ===== HERO ===== */
 .hero {
-  background: #020617;         /* fondo sección */
-  padding: 3rem;               /* más espacio */
-  border-radius: 16px;         /* bordes suaves */
-}
-
-.hero h2 {
-  font-size: 2rem;             /* título principal */
-  margin-bottom: 1rem;         /* separación */
-  color: #93c5fd;              /* azul claro */
-}
-
-.hero p {
-  font-size: 1rem;             /* texto normal */
-  opacity: 0.9;                /* suaviza */
-}
-
-/* ===== SECCIONES ===== */
-.section h2 {
-  font-size: 1.7rem;           /* título de sección */
-  margin-bottom: 2rem;         /* espacio abajo */
-  color: #93c5fd;              /* azul */
+  padding: 3rem;
+  border-radius: 16px;
 }
 
 /* ===== TARJETAS ===== */
 .cards {
-  display: flex;               /* tarjetas en fila */
-  gap: 2rem;                   /* separación cómoda */
-  flex-wrap: wrap;             /* bajan si no caben */
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .card {
-  background: #020617;         /* fondo tarjeta */
-  padding: 2rem;               /* espacio interno */
-  width: 240px;                /* tamaño uniforme */
-  border-radius: 16px;         /* bordes suaves */
+  padding: 2rem;
+  width: 240px;
+  border-radius: 16px;
 }
 
-.card h3 {
-  font-size: 1.2rem;           /* título claro */
-  margin-bottom: 0.6rem;       /* separación */
-  color: #e5e7eb;              /* blanco suave */
+/* 🎯 IMPORTANTE: tarjetas también cambian */
+body.dark .card,
+body.dark .hero {
+  background: #020617;
 }
 
-.card p {
-  font-size: 0.95rem;          /* texto cómodo */
-  opacity: 0.85;               /* menos dureza */
+body.light .card,
+body.light .hero {
+  background: #ffffff;
+}
+
+body.neon .card,
+body.neon .hero {
+  background: #000;
+  border: 1px solid #39ff14;
+}
+
+body.forest .card,
+body.forest .hero {
+  background: #022c22;
 }
 
 /* ===== FOOTER ===== */
 .footer {
-  grid-area: footer;           /* zona footer */
-  text-align: center;          /* centrado */
-  padding: 1.5rem;             /* espacio */
-  font-size: 0.85rem;          /* pequeño */
-  color: #94a3b8;              /* gris suave */
+  grid-area: footer;
+  text-align: center;
+  padding: 1.5rem;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 800px) {
   .grid-layout {
-    grid-template-columns: 1fr; /* una columna */
+    grid-template-columns: 1fr;
     grid-template-areas:
       "header"
       "main"
@@ -150,15 +139,6 @@ body {
   }
 
   .cards {
-    flex-direction: column;    /* cards en columna */
+    flex-direction: column;
   }
-}
-
-/* ===== TIMER ===== */
-.timer {
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-  color: #e5e7eb;
-  opacity: 0.9;
-  font-family: monospace; /* estilo reloj */
 }

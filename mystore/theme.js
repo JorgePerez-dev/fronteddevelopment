@@ -1,15 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("JS cargado");
 
     const btns = document.querySelectorAll('.theme-btn');
-    console.log(btns);
 
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const theme = btn.dataset.theme;
-            console.log("click:", theme);
 
-            document.body.className = theme;
+            // quitamos todas las clases de tema
+            document.body.classList.remove("dark", "light", "neon", "forest");
+
+            // añadimos la nueva
+            document.body.classList.add(theme);
         });
     });
+
 });
