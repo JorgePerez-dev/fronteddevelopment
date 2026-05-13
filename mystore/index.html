@@ -11,12 +11,19 @@
 
   <style>
 
+    /* SCROLL SUAVE */
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
       overflow-x:hidden;
+      background:#020b1f;
+      color:white;
     }
 
-    /* CANVAS DEL HUMO */
+    /* CANVAS */
     #smoke_canvas{
       position:fixed;
       top:0;
@@ -25,6 +32,13 @@
       height:100%;
       z-index:-1;
       pointer-events:none;
+    }
+
+    /* AJUSTE PARA EL SCROLL */
+    #inicio,
+    #perfiles,
+    #contacto{
+      scroll-margin-top:120px;
     }
 
   </style>
@@ -47,7 +61,7 @@
       <nav class="nav">
         <a href="#inicio">Inicio</a>
         <a href="#perfiles">Perfiles</a>
-        <a href="#contacto">Contacto</a>
+        <a href="contact.html">Contacto</a>
       </nav>
 
       <div class="theme-controls">
@@ -60,6 +74,7 @@
     </header>
 
     <aside class="aside">
+
       <h2>Perfiles</h2>
 
       <ul>
@@ -68,18 +83,23 @@
         <li>Full Stack</li>
         <li>Mobile</li>
       </ul>
+
     </aside>
 
     <main class="main">
 
+      <!-- INICIO -->
       <section id="inicio" class="hero">
+
         <h2>Tipos de Programadores</h2>
 
         <p>
           Conoce los principales perfiles dentro del desarrollo de software.
         </p>
+
       </section>
 
+      <!-- PERFILES -->
       <section id="perfiles" class="section">
 
         <h2>Perfiles Profesionales</h2>
@@ -110,6 +130,7 @@
 
       </section>
 
+      <!-- CONTACTO -->
       <section id="contacto" class="section">
 
         <h2>Contacto</h2>
