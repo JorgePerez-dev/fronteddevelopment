@@ -1,20 +1,22 @@
-const timeDisplay = document.getElementById("TimePanel");
+document.addEventListener("DOMContentLoaded", () => {
 
-// Momento en que se abre la web
-const startTime = new Date();
+  const timer = document.getElementById("timer");
 
-function updateTime() {
-    const now = new Date();
-    const diff = now - startTime;
+  if (!timer) {
+    console.error("No existe #timer en el HTML");
+    return;
+  }
 
-    const hours = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, "0");
-    const minutes = String(Math.floor(diff / (1000 * 60) % 60)).padStart(2, "0");
-    const seconds = String(Math.floor(diff / 1000 % 60)).padStart(2, "0");
+  let seconds = 0;
 
-    timeDisplay.textContent = `${hours}:${minutes}:${seconds}`;
-}
+  setInterval(() => {
+    seconds++;
 
-setInterval(updateTime, 1000);
-updateTime();
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
 
+    timer.textContent = `${hrs}:${mins}:${secs}`;
+  }, 1000);
 
+});

@@ -1,21 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CodeNova</title>
 
   <link rel="stylesheet" href="../mystore/styles.css">
+
+  <style>
+
+    body{
+      margin:0;
+      overflow-x:hidden;
+    }
+
+    /* CANVAS DEL HUMO */
+    #smoke_canvas{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+  </style>
+
 </head>
 
 <body class="dark theme-transition">
 
+  <!-- CANVAS -->
+  <canvas id="smoke_canvas"></canvas>
+
   <div class="grid-layout">
 
     <header class="header">
+
       <h1>&lt;CodeNova /&gt;</h1>
 
-      <div id="TimePanel" class="timer">00:00:00</div>
+      <div id="timer" class="timer">00:00:00</div>
 
       <nav class="nav">
         <a href="#inicio">Inicio</a>
@@ -34,6 +61,7 @@
 
     <aside class="aside">
       <h2>Perfiles</h2>
+
       <ul>
         <li>Frontend</li>
         <li>Backend</li>
@@ -43,15 +71,21 @@
     </aside>
 
     <main class="main">
+
       <section id="inicio" class="hero">
         <h2>Tipos de Programadores</h2>
-        <p>Conoce los principales perfiles dentro del desarrollo de software.</p>
+
+        <p>
+          Conoce los principales perfiles dentro del desarrollo de software.
+        </p>
       </section>
 
       <section id="perfiles" class="section">
+
         <h2>Perfiles Profesionales</h2>
 
         <div class="cards">
+
           <article class="card">
             <h3>Frontend</h3>
             <p>Se encarga de la parte visual de las páginas web.</p>
@@ -71,13 +105,19 @@
             <h3>Mobile</h3>
             <p>Desarrolla aplicaciones para móviles.</p>
           </article>
+
         </div>
+
       </section>
 
       <section id="contacto" class="section">
+
         <h2>Contacto</h2>
+
         <p>correo@codenova.dev</p>
+
       </section>
+
     </main>
 
     <footer class="footer">
@@ -86,6 +126,10 @@
 
   </div>
 
-<script src="../theme/theme.js"></script>
+  <!-- SCRIPTS -->
+  <script src="theme.js"></script>
+  <script src="timer.js"></script>
+  <script src="smoke.js"></script>
+
 </body>
 </html>
